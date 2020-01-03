@@ -1,4 +1,4 @@
-default: build_prod
+default: build_env
 
 source:
 	git clone --recursive https://github.com/mit-cml/appinventor-sources.git
@@ -11,16 +11,13 @@ build_prod:
 	docker build --rm -t $(TAG) -f prod.Dockerfile .
 
 dev:
-	docker run --rm -it --privileged \
+	docker run --rm -it \
 			-p 8888:8888 \
-  			-p 5037:5037 \
-  			-v /dev/bus/usb:/dev/bus/usb \
   			-v ${PWD}/appinventor-sources/:/home/developer/appinventor-sources \
   			$(TAG)-env
 			
 run:
-	docker run --rm --privileged \
+	docker run --rm \
 			--name appinventor-server-01 \
 			-p 8888:8888 \
-  			-p 5037:5037 \
   			$(TAG)
