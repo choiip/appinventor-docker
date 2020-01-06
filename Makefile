@@ -12,6 +12,8 @@ build_prod:
 
 dev:
 	docker run --rm -it \
+			-e DISPLAY=${DISPLAY} \
+       		-v /tmp/.X11-unix:/tmp/.X11-unix \
 			-p 8888:8888 \
   			-v ${PWD}/appinventor-sources/:/home/developer/appinventor-sources \
   			$(TAG)-env
