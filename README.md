@@ -10,6 +10,19 @@ Clone source, build appinventor from source and run servers.
 
 ### Makefile
 Handy way to build docker images and run containers.
+```bash
+# Build environment for appinventor-sources development
+$ make build_env
+
+# Build environment for production appinventor-server 
+$ make build_prod
+
+# Run environment for appinventor-sources development
+$ make dev
+
+# Run appinventor-server 
+$ make run
+```
 
 ## About Testing on device/emulator
 The testing devices are required to install [MIT AI2 Companion](https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3).
