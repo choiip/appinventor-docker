@@ -7,7 +7,7 @@ TAG = appinventor-server
 build_env:
 	docker build --rm -t $(TAG)-env -f Dockerfile .
 
-REPO_TAG=v182a
+REPO_TAG=v186a
 build_prod:
 	docker build --build-arg REPO_TAG=$(REPO_TAG) --rm -t $(TAG):$(REPO_TAG) -f prod.Dockerfile .
 
